@@ -25,7 +25,7 @@ def main():
         })
 
     send_email(config.RECIPIENT_EMAIL, processed_articles, config.SENDER_EMAIL, config.SENDER_PASSWORD)
-    send_whatsapp_message("+40741246420",processed_articles)
+    # send_whatsapp_message("+40741246420",processed_articles)
 
 if __name__ == "__main__":
     main()
