@@ -15,7 +15,7 @@ jobs:
 
       # Download previous sent_messages.txt artifact if it exists
       - name: Download sent_messages artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: sent_messages
           path: ./  # downloads to root of repo
@@ -49,7 +49,7 @@ jobs:
 
       # Upload the sent_messages.txt file as an artifact
       - name: Upload sent_messages artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sent_messages
           path: sent_messages.txt
