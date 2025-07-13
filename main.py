@@ -7,7 +7,7 @@ import config
 
 def main():
     tags = ["ai", "ios development", "swift", "swift ai"]
-    raw_articles = fetch_articles_by_tags(tags, max_articles_per_tag=3)
+    raw_articles = fetch_articles_by_tags(tags, max_articles_per_tag=5)
     processed_articles = []
 
     for article in raw_articles[:3]:
