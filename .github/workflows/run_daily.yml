@@ -30,7 +30,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
+      
+      - name: Print environment variables
+        run: |
+          echo "OPENAI_API_KEY = $OPENAI_API_KEY"
+          echo "RECIPIENT_EMAIL = $RECIPIENT_EMAIL"
+          echo "SENDER_EMAIL = $SENDER_EMAIL"
+          echo "SENDER_PASSWORD is hidden for security"
+      
       - name: Run the script
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
