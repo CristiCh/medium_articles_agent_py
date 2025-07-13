@@ -1,7 +1,7 @@
 from fetch_articles import fetch_articles_by_tags
 from summarize_articles import summarize_article, extract_key_idea
 from categorize import categorize_article
-from email_sender import send_email, send_whatsapp_message
+from email_sender import send_email#, send_whatsapp_message
 import config
 
 def main():
