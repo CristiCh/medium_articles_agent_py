@@ -22,7 +22,8 @@ def main():
             "key_idea": key_idea.strip(),
             "category": category,
             "published": article.get("published", "Unknown"),
-            "tags": article.get("tags", []) 
+            "tags": article.get("tags", []),
+            "image": article["image"]
         })
 
     send_email(config.RECIPIENT_EMAIL, processed_articles, config.SENDER_EMAIL, config.SENDER_PASSWORD)
