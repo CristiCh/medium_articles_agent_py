@@ -2,6 +2,7 @@ from fetch_articles import fetch_articles_by_tags
 from summarize_articles import summarize_article, extract_key_idea
 from categorize import categorize_article
 from email_sender import send_email
+from text_saver import save_sent_message
 import config
 
 def main():
@@ -25,6 +26,7 @@ def main():
         })
 
     send_email(config.RECIPIENT_EMAIL, processed_articles, config.SENDER_EMAIL, config.SENDER_PASSWORD)
+    save_sent_message(message=processed_articles)
 
 if __name__ == "__main__":
     main()
