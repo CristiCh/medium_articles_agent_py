@@ -1,7 +1,7 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import pywhatkit
+# import pywhatkit
 import time
 
 def send_email(recipient, articles, sender_email, sender_password):
@@ -27,16 +27,16 @@ def send_email(recipient, articles, sender_email, sender_password):
         server.login(sender_email, sender_password)
         server.send_message(msg)
 
-def send_whatsapp_message(phone_number, message):
-    # Sends message instantly; the user needs to scan WhatsApp Web QR code at first run
-    # Scheduled to send 1 minute from now to allow time for WhatsApp Web to open
-    from datetime import datetime, timedelta
-    now = datetime.now() + timedelta(minutes=1)
-    hour = now.hour
-    minute = now.minute
-    message1 = format_articles_for_whatsapp(message)
+# def send_whatsapp_message(phone_number, message):
+#     # Sends message instantly; the user needs to scan WhatsApp Web QR code at first run
+#     # Scheduled to send 1 minute from now to allow time for WhatsApp Web to open
+#     from datetime import datetime, timedelta
+#     now = datetime.now() + timedelta(minutes=1)
+#     hour = now.hour
+#     minute = now.minute
+#     message1 = format_articles_for_whatsapp(message)
 
-    pywhatkit.sendwhatmsg(phone_number, message1, hour, minute, wait_time=10, tab_close=True)
+#     pywhatkit.sendwhatmsg(phone_number, message1, hour, minute, wait_time=10, tab_close=True)
 
 def format_articles_for_whatsapp(articles):
     message = "📰 Your Daily Medium Digest\n\n"
