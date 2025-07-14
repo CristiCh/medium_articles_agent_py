@@ -9,14 +9,14 @@ import os
 from PIL import Image
 from io import BytesIO
 
-def send_email(recipient, articles, sender_email, sender_password):
+def send_email(recipient, articles, sender_email, sender_password, weather_info):
     msg = MIMEMultipart("related")
     msg['From'] = sender_email
     msg['To'] = recipient
     msg['Subject'] = "📰🔥 Today’s Top Medium Picks"
 
     # Build HTML and collect image paths + cids
-    html_body, image_attachments = build_email_content(articles)
+    html_body, image_attachments = build_email_content(articles, weather_info)
 
     # Attach HTML
     msg_alternative = MIMEMultipart("alternative")
@@ -46,9 +46,14 @@ def send_email(recipient, articles, sender_email, sender_password):
         server.send_message(msg)
 
 
-def build_email_content(articles):
+def build_email_content(articles, weather_info):
     html_parts = []
     image_attachments = []
+
+    html_parts.append(f"""
+    <p style="font-size:18px; margin-bottom:20px;">
+    <b>🌤 Weather in Cluj-Napoca today:</b> {weather_info}</p>
+    """)
 
     for index, article in enumerate(articles):
         img_html = ""

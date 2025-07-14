@@ -3,6 +3,7 @@ from summarize_articles import summarize_article, extract_key_idea
 from categorize import categorize_article
 from email_sender import send_email
 from text_saver import save_sent_message
+from fetch_weather import fetch_weather
 import config
 
 def main():
@@ -25,8 +26,12 @@ def main():
             "tags": article.get("tags", []),
             "image": article["image"]
         })
-
-    send_email(config.RECIPIENT_EMAIL, processed_articles, config.SENDER_EMAIL, config.SENDER_PASSWORD)
+    weather = 'Weather'#fetch_weather()
+    send_email(config.RECIPIENT_EMAIL, 
+               processed_articles, 
+               config.SENDER_EMAIL, 
+               config.SENDER_PASSWORD, 
+               weather)
     save_sent_message(message=processed_articles)
 
 if __name__ == "__main__":
