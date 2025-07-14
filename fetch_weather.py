@@ -6,6 +6,7 @@ def fetch_weather():
     KEY = os.getenv("ACCUWEATHER_API_KEY")
     CITY_KEY = "287713"  # Cluj-Napoca
     url = f"http://dataservice.accuweather.com/currentconditions/v1/{CITY_KEY}?apikey={KEY}"
+    print(f"[INFO] Final AccuWeather URL: {url}")
     try:
         response = requests.get(url)
         response.raise_for_status()
