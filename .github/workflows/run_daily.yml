@@ -2,7 +2,7 @@ name: Run Medium AI Agent Daily
 
 on:
   schedule:
-    - cron: '3 5 * * *'  # 8:00 AM UTC every day
+    - cron: '7 4 * * *'  # By 8:00 AM Romanian every day
   workflow_dispatch:
 
 jobs:
