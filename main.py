@@ -26,7 +26,7 @@ def main():
             "tags": article.get("tags", []),
             "image": article["image"]
         })
-    weather = 'Weather'#fetch_weather()
+    weather = fetch_weather()
     send_email(config.RECIPIENT_EMAIL, 
                processed_articles, 
                config.SENDER_EMAIL, 
