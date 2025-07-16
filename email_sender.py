@@ -13,7 +13,7 @@ def send_email(recipient, articles, sender_email, sender_password, weather_info,
     msg = MIMEMultipart("related")
     msg['From'] = sender_email
     msg['To'] = recipient
-    msg['Subject'] = "📰🔥 Today’s Top Medium Picks"
+    msg['Subject'] = "🔥 Today's Spark 🚀"
 
     # Build HTML and collect image paths + cids
     html_body, image_attachments = build_email_content(articles, weather_info, quote)
@@ -53,7 +53,8 @@ def build_email_content(articles, weather_info, quote):
     html_parts.append(f"""
     <p style="font-size:18px; margin-bottom:20px;">
         <b>{weather_info}</b><br><br>
-        <b>Today's Quote:</b> <i>{quote}</i>
+        <b>💡 Today's quote:</b> <i>{quote}</i><br><br>
+        <b>📰 Your daily articles</b>
     </p>
     """)
 
