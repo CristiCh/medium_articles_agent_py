@@ -1,5 +1,6 @@
 feedparser
 openai
 pywhatkit
+langdetect
 python-dotenv
 requests
