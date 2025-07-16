@@ -53,9 +53,9 @@ def build_email_content(articles, weather_info, quote):
     html_parts.append(f"""
     <p style="font-size:18px; margin-bottom:20px;">
         <b>{weather_info}</b><br><br>
-        <i>{quote}</i>
+        <b>Today's Quote:</b> <i>{quote}</i>
     </p>
-""")
+    """)
 
     for index, article in enumerate(articles):
         img_html = ""
