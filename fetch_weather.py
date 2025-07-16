@@ -12,11 +12,6 @@ def fetch_weather(api_key):
 
         forecast = data["DailyForecasts"][0]
 
-        # min_temp = forecast["Temperature"]["Minimum"]["Value"]
-        # max_temp = forecast["Temperature"]["Maximum"]["Value"]
-        # day_phrase = forecast["Day"]["PrecipitationIntensity"] + " " + forecast["Day"]["IconPhrase"]
-        # night_phrase = forecast["Night"]["IconPhrase"]
-
         day = forecast.get("Day", {})
         day_precip = day.get("PrecipitationIntensity", "")
         day_phrase = day.get("IconPhrase", "")
