@@ -12,10 +12,13 @@ def fetch_weather():
         response = requests.get(url)
         response.raise_for_status()
         data = response.json()[0]
+        print(f"[INFO] Data: {data}")
         # desc = data["WeatherText"]
         # temp = data["Temperature"]["Metric"]["Value"]
         headline_text = data["Headline"]["Text"]
+        print(f"[INFO] Headline: {headline_text}")
         max_temp_f = data["DailyForecasts"][0]["Temperature"]["Maximum"]["Value"]
+        print(f"[INFO] Temp: {max_temp_f}")
         max_temp_c = (max_temp_f - 32) * 5 / 9
         return f"{headline_text}, {max_temp_c:.1f}°C"
     except Exception as e:
