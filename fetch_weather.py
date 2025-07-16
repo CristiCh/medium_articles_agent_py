@@ -7,7 +7,6 @@ def fetch_weather():
     KEY = config.ACCUWEATHER_API_KEY #os.getenv("ACCUWEATHER_API_KEY")
     CITY_KEY = "287713"  # Cluj-Napoca
     url = f"https://dataservice.accuweather.com/forecasts/v1/daily/1day/{CITY_KEY}?apikey={KEY}&metric=true"
-
     print(f"[INFO] Forecast URL: {url}")
 
     try:
