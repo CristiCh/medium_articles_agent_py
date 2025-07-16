@@ -45,7 +45,7 @@ def fetch_weather():
            f"{weather_emoji}  Weather in Cluj-Napoca today "
            f"🌞 {day_complete}, 🌙 {night_complete}. "
            f"🌡️ 🔺{max_temp}/🔻{min_temp} °C"
-           f"🔗 [More details]({mobile_link})"
+           f'🔗 <a href="{mobile_link}">More details</a>'
            
 )
         print(f"[INFO] Forecast: {forecast_summary}")
