@@ -25,7 +25,7 @@ def extract_key_idea(summary, api_key):
             },
             {
                 "role": "user",
-                "content": f"Extract the key idea of this article summary in one clear sentence, removing prefix 'This article explains': {summary}"
+                "content": f"Extract the actionable outcome from this article summary in one clear sentence, removing prefix 'This article explains': {summary}"
             }
         ],
         temperature=0.5,

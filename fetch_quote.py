@@ -1,5 +1,4 @@
 from openai import OpenAI
-import config
 
 def get_inspirational_quote(api_key):
     client = OpenAI(api_key=api_key)
@@ -27,7 +26,3 @@ def get_inspirational_quote(api_key):
     except Exception as e:
         print(f"[ERROR] Failed to fetch quote: {e}")
         return "“Stay positive, work hard, and make it happen.” — Unknown"
-
-
-if __name__ == "__main__":
-    get_inspirational_quote(config.OPENAI_API_KEY)

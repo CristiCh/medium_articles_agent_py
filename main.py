@@ -28,7 +28,7 @@ def main():
             "image": article["image"]
         })
 
-    weather = fetch_weather()
+    weather = fetch_weather(config.ACCUWEATHER_API_KEY)
     quote = get_inspirational_quote(config.OPENAI_API_KEY)
     send_email(config.RECIPIENT_EMAIL, 
                processed_articles, 

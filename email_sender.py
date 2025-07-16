@@ -3,8 +3,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.utils import make_msgid
-# import pywhatkit
-import time
 import os
 from PIL import Image
 from io import BytesIO
@@ -44,7 +42,6 @@ def send_email(recipient, articles, sender_email, sender_password, weather_info,
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(sender_email, sender_password)
         server.send_message(msg)
-
 
 def build_email_content(articles, weather_info, quote):
     html_parts = []
