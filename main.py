@@ -4,6 +4,7 @@ from categorize import categorize_article
 from email_sender import send_email
 from text_saver import save_sent_message
 from fetch_weather import fetch_weather
+from fetch_quote import get_inspirational_quote
 import config
 
 def main():
@@ -26,12 +27,15 @@ def main():
             "tags": article.get("tags", []),
             "image": article["image"]
         })
+
     weather = fetch_weather()
+    quote = get_inspirational_quote(config.OPENAI_API_KEY)
     send_email(config.RECIPIENT_EMAIL, 
                processed_articles, 
                config.SENDER_EMAIL, 
                config.SENDER_PASSWORD, 
-               weather)
+               weather,
+               quote)
     save_sent_message(message=processed_articles)
 
 if __name__ == "__main__":
