@@ -7,6 +7,7 @@ from fetch_weather import fetch_weather
 from fetch_quote import get_inspirational_quote
 from article_chooser import choose_top_ios_articles
 from fetch_algorithm import generate_swift_algorithm_exercise
+from fetch_recipes import get_monday_recipes
 import config
 
 def main():
@@ -34,6 +35,7 @@ def main():
     weather = fetch_weather(config.ACCUWEATHER_API_KEY)
     quote = get_inspirational_quote(config.OPENAI_API_KEY)
     exercise = generate_swift_algorithm_exercise(config.OPENAI_API_KEY)
+    recipe = get_monday_recipes("healthy tasty one pot recipes", config.OPENAI_API_KEY, config.YOUTUBE_API_KEY)
 
     send_email(config.RECIPIENT_EMAIL, 
                processed_articles, 
@@ -41,7 +43,8 @@ def main():
                config.SENDER_PASSWORD, 
                weather,
                quote,
-               exercise)
+               exercise,
+               recipe)
     save_sent_message(message=processed_articles)
 
 if __name__ == "__main__":
