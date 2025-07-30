@@ -2,4 +2,4 @@ pywhatkit
 langdetect
 python-dotenv
 requests
-googleapiclient
+google-api-python-client
