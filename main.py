@@ -11,7 +11,7 @@ from fetch_recipes import get_monday_recipes
 import config
 
 def main():
-    tags = ["ai", "ios development", "swift", "swift ai"]
+    tags = ["ai", "ios development", "swift", "swift ai", "earn", "passive income", "money"]
     raw_articles = fetch_articles_by_tags(tags, max_articles_per_tag=5)
     processed_articles = []
     selected_articles = choose_top_ios_articles(raw_articles, config.OPENAI_API_KEY)
