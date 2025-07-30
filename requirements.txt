@@ -2,5 +2,6 @@ pywhatkit
 langdetect
 python-dotenv
 requests
+openai
 google-api-python-client
 feedparser
